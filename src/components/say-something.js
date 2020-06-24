@@ -45,7 +45,7 @@ class SaySomething extends HTMLElement {
             case 'text':
                 this._text = newVal;
                 break;
-        };
+        }
 
         this._render();
     }

@@ -1,4 +1,5 @@
 import './components/say-something.js';
+import './components/custom-button.js';
 
 const template = document.createElement('template');
 
@@ -17,7 +18,10 @@ template.innerHTML = `
 		Text: <input type="text" />
 
 		<say-something></say-something>
+
 		<say-something color="red"></say-something>
+
+		<custom-button label="hola"></custom-button>
 	</div>
 `;
 
@@ -32,6 +36,14 @@ class App extends HTMLElement {
         this.$input.addEventListener('input', this._handleChange.bind(this));
 
         this.$allSaySomething = this._shadowRoot.querySelectorAll('say-something');
+        this.$customButton = this._shadowRoot.querySelector('custom-button');
+
+        this.$customButton.addEventListener(
+            // Captura el onClick desde un componente hijo de custom-button
+            'onClick', value => {
+                console.log(value);
+            }
+        );
     }
 
     _handleChange() {
