@@ -15,9 +15,9 @@ template.innerHTML = `
 
         .label {
             display: block;
-            margin-bottom: 30px;
-            color: #000000;
-            font-size: 25px;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 22px;
             font-weight: normal;
             line-height: 16px;
         }
@@ -25,21 +25,23 @@ template.innerHTML = `
         .dropdown-list-container {
             position: relative;
             margin: auto;
-            width: 30%;
+            width: 300px;
         }
 
         .dropdown-list {
             position: absolute;
+            z-index: 1;
             width: 100%;
             display: none;
             max-height: 400px;
             overflow-y: auto;
             margin: auto;
             padding: 0px;
+            margin-top: 2px;
             background-color: #ffffff;
-            border: 1px solid #a1a1a1;
+            border: 0px solid #a1a1a1;
             border-radius: 10px;
-            box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.05), 0 2px 8px 0 rgba(161,161,161, 0.4);
+            box-shadow: 0 10px 8px 0 rgba(0,0,0, 0.05), 0 2px 8px 0 rgba(161,161,161, 0.4);
             list-style: none;
         }
 

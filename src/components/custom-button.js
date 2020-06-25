@@ -5,7 +5,7 @@ template.innerHTML = `
         .container {
             padding: 8px;
             margin: auto;
-            width: 30%;
+            width: 300px;
         }
 
         button {
@@ -24,10 +24,10 @@ template.innerHTML = `
             height: 40px;
 
             box-sizing: border-box;
-            border: 1px solid #a1a1a1;
+            border: 0px solid #a1a1a1;
             border-radius: 10px;
             background: #ffffff;
-            box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.05), 0 2px 8px 0 rgba(161,161,161, 0.4);
+            box-shadow: 0 10px 8px 0 rgba(0,0,0, 0.15), 0 2px 8px 0 rgba(161,161,161, 0.4);
             color: #363636;
             cursor: pointer;
         }

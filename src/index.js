@@ -1,4 +1,3 @@
-import './components/say-something.js';
 import './components/custom-dropdown.js';
 
 const template = document.createElement('template');
@@ -7,30 +6,90 @@ const template = document.createElement('template');
 
 template.innerHTML = `
     <style>
+        h1 {
+            color: white;
+            margin-bottom: 80px;
+            font-size: 45px;
+            text-shadow: 2px 1px 2px #4c4d4f;
+        }
+
+        h5 {
+            color: white;
+            margin-bottom: 0px;
+            margin-top: 50px;
+            font-size: 36px;
+            text-shadow: 2px 1px 2px #4c4d4f;
+        }
+
+        hr.rounded {
+            border-top: 5px solid white;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .component-section {
+            margin: 50px 0 100px 0;
+        }
 
     </style>
 
 	<div>
-		<h1>Web Components with Webpack Starter Kit</h1>
+        <h1>Reusable Web Components</h1>
 
-		Text: <input type="text" />
+        <hr class="rounded" color="white">
+        <h5>Selector</h5>
+        <div class="component-section">
+            <custom-dropdown
+                label="Seleccionar ingredientes"
+                option="option1"
+                options='{ 
+                            "option1": { "label": "Pepperoni" },
+                            "option2": { "label": "Pimentón" },
+                            "option3": { "label": "Tomate" },
+                            "option4": { "label": "Jamón" },
+                            "option5": { "label": "Aceitunas" }
+                        }'
+            ></custom-dropdown>
+            <custom-dropdown
+                option="option2"
+                options='{ 
+                            "option1": { "label": "Pepperoni" },
+                            "option2": { "label": "Pimentón" },
+                            "option3": { "label": "Tomate" },
+                            "option4": { "label": "Jamón" },
+                            "option5": { "label": "Aceitunas" }
+                        }'
+            ></custom-dropdown>
+            <custom-dropdown
+                option="option3"
+                options='{ 
+                            "option1": { "label": "Pepperoni" },
+                            "option2": { "label": "Pimentón" },
+                            "option3": { "label": "Tomate" },
+                            "option4": { "label": "Jamón" },
+                            "option5": { "label": "Aceitunas" }
+                        }'
+            ></custom-dropdown>
+        </div>
+        <hr class="rounded" color="white">
 
-		<say-something></say-something>
+        <h5>E-commerce Card</h5>
+        <div class="component-section"></div>
 
-		<say-something color="red"></say-something>
+        <hr class="rounded" color="white">
 
-        <custom-dropdown
-            label="Selector"
-            option="option1"
-            options='{ 
-                        "option1": { "label": "Pepperoni" },
-                        "option2": { "label": "Pimentón" },
-                        "option3": { "label": "Tomate" },
-                        "option4": { "label": "Jamón" },
-                        "option5": { "label": "Aceitunas" }
-                    }'
-        ></custom-dropdown>
+        <h5>Componente 3</h5>
+        <div class="component-section"></div>
+        
+        <hr class="rounded" color="white">
 
+        <h5>Componente 4</h5>
+        <div class="component-section"></div>
+
+        <hr class="rounded" color="white">
+
+        <h5>Componente 5</h5>
+        <div class="component-section"></div>
 	</div>
 `;
 
@@ -41,10 +100,11 @@ class App extends HTMLElement {
         this._shadowRoot = this.attachShadow({ mode: 'open' });
         this._shadowRoot.appendChild(template.content.cloneNode(true));
 
+        /*
         this.$input = this._shadowRoot.querySelector('input');
         this.$input.addEventListener('input', this._handleChange.bind(this));
+        */
 
-        this.$allSaySomething = this._shadowRoot.querySelectorAll('say-something');
         this.$customDropdown = this._shadowRoot.querySelector('custom-dropdown');
 
         this.$customDropdown.addEventListener(
@@ -56,9 +116,7 @@ class App extends HTMLElement {
     }
 
     _handleChange() {
-        this.$allSaySomething.forEach(element => {
-            element.setAttribute('text', this.$input.value);
-        });
+
     }
 }
 
