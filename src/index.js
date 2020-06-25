@@ -1,4 +1,5 @@
 import './components/custom-dropdown.js';
+import './components/custom-product-card.js';
 
 const template = document.createElement('template');
 
@@ -74,7 +75,26 @@ template.innerHTML = `
         <hr class="rounded" color="white">
 
         <h5>E-commerce Card</h5>
-        <div class="component-section"></div>
+        <div class="component-section">
+            <custom-product-card
+                pname="Xaomi Mi 9"
+                img="https://i01.appmifile.com/webfile/globalimg/Syueting/bldack.png"
+                price1="$189.990"
+                price2="Internet: $200.000"
+                price3="Normal: $240.000"
+                rating="5"
+            >
+            </custom-product-card>
+            <custom-product-card
+                pname="Motorola G8 Play"
+                img="https://www.electrorates.com/blogimg/Motorola_Moto_G8_Play.png"
+                price1="$135.000"
+                price2="Internet: $190.000"
+                price3="Normal: $200.000"
+                rating=""
+            >
+            </custom-product-card>
+        </div>
 
         <hr class="rounded" color="white">
 
