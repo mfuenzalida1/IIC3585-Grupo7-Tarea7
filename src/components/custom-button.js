@@ -4,6 +4,8 @@ template.innerHTML = `
     <style>
         .container {
             padding: 8px;
+            margin: auto;
+            width: 30%;
         }
 
         button {
@@ -17,12 +19,13 @@ template.innerHTML = `
             white-space: nowrap;
             cursor: pointer;
             outline: none;
-
+            margin-top: 20px;
             width: 100%;
             height: 40px;
 
             box-sizing: border-box;
             border: 1px solid #a1a1a1;
+            border-radius: 10px;
             background: #ffffff;
             box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.05), 0 2px 8px 0 rgba(161,161,161, 0.4);
             color: #363636;
@@ -43,6 +46,7 @@ class CustomButton extends HTMLElement {
             mode: 'open' // Componente accesible
         });
         this._shadowRoot.appendChild(template.content.cloneNode(true)); // Reusable en el HTML
+        this.$container = this._shadowRoot.querySelector('.container');
         this.$button = this._shadowRoot.querySelector('button');
         this.$button.addEventListener('click', () => {
             this.dispatchEvent(
@@ -72,6 +76,12 @@ class CustomButton extends HTMLElement {
     attributeChangedCallback(name, oldVal, newVal) {
         // Recibe el cambio del atributo
         this.render();
+    }
+
+    connectedCallback() {
+        if (this.hasAttribute('as-atom')) {
+            this.$container.style.padding = '0px';
+        }
     }
 
     render() {

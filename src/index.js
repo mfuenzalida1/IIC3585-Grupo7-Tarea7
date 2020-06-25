@@ -1,16 +1,14 @@
 import './components/say-something.js';
-import './components/custom-button.js';
+import './components/custom-dropdown.js';
 
 const template = document.createElement('template');
 
 // Se utilizo el template inicial: https://github.com/rwieruch/web-components-starter-kit
 
 template.innerHTML = `
-	<style>
-		:host {
-			font-family: sans-serif;
-		}
-	</style>
+    <style>
+
+    </style>
 
 	<div>
 		<h1>Web Components with Webpack Starter Kit</h1>
@@ -21,7 +19,18 @@ template.innerHTML = `
 
 		<say-something color="red"></say-something>
 
-		<custom-button label="hola"></custom-button>
+        <custom-dropdown
+            label="Selector"
+            option="option1"
+            options='{ 
+                        "option1": { "label": "Pepperoni" },
+                        "option2": { "label": "Pimentón" },
+                        "option3": { "label": "Tomate" },
+                        "option4": { "label": "Jamón" },
+                        "option5": { "label": "Aceitunas" }
+                    }'
+        ></custom-dropdown>
+
 	</div>
 `;
 
@@ -36,11 +45,11 @@ class App extends HTMLElement {
         this.$input.addEventListener('input', this._handleChange.bind(this));
 
         this.$allSaySomething = this._shadowRoot.querySelectorAll('say-something');
-        this.$customButton = this._shadowRoot.querySelector('custom-button');
+        this.$customDropdown = this._shadowRoot.querySelector('custom-dropdown');
 
-        this.$customButton.addEventListener(
-            // Captura el onClick desde un componente hijo de custom-button
-            'onClick', value => {
+        this.$customDropdown.addEventListener(
+            // Captura el onChange desde un componente hijo de custom-dropdown
+            'onChange', value => {
                 console.log(value);
             }
         );
