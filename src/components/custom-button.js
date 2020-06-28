@@ -19,7 +19,7 @@ template.innerHTML = `
             white-space: nowrap;
             cursor: pointer;
             outline: none;
-            margin-top: 20px;
+            margin-top: 6px;
             width: 100%;
             height: 40px;
 
@@ -68,9 +68,50 @@ class CustomButton extends HTMLElement {
         this.setAttribute('label', value);
     }
 
+    get color() {
+        // Refleja el valor del atributo color mas reciente a la propiedad de la clase
+        return this.getAttribute('color');
+    }
+
+    set color(value) {
+        // Para activar el callback con cambios de un atributo desde el script
+        this.setAttribute('color', value);
+    }
+
+    get bgcolor() {
+        // Refleja el valor del atributo bgcolor mas reciente a la propiedad de la clase
+        return this.getAttribute('bgcolor');
+    }
+
+    set bgcolor(value) {
+        // Para activar el callback con cambios de un atributo desde el script
+        this.setAttribute('bgcolor', value);
+    }
+
+    get width() {
+        // Refleja el valor del atributo width mas reciente a la propiedad de la clase
+        return this.getAttribute('width');
+    }
+
+    set width(value) {
+        // Para activar el callback con cambios de un atributo desde el script
+        this.setAttribute('width', value);
+    }
+
+    get height() {
+        // Refleja el valor del atributo height mas reciente a la propiedad de la clase
+        return this.getAttribute('height');
+    }
+
+    set height(value) {
+        // Para activar el callback con cambios de un atributo desde el script
+        this.setAttribute('height', value);
+    }
+
+
     static get observedAttributes() {
         // Define los atributos en donde se observan cambios
-        return ['label'];
+        return ['label', 'color', 'bgcolor', 'width', 'height'];
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
@@ -86,6 +127,10 @@ class CustomButton extends HTMLElement {
 
     render() {
         this.$button.innerHTML = this.label;
+        this.$button.style.backgroundColor = this.bgcolor;
+        this.$button.style.color = this.color;
+        this.$button.style.width = this.width;
+        this.$button.style.height = this.height;
     }
 }
 

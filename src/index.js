@@ -1,5 +1,6 @@
 import './components/custom-dropdown.js';
 import './components/custom-product-card.js';
+import './components/custom-table.js';
 
 const template = document.createElement('template');
 
@@ -98,17 +99,84 @@ template.innerHTML = `
 
         <hr class="rounded" color="white">
 
-        <h5>Componente 3</h5>
-        <div class="component-section"></div>
-        
+        <h5>Visualizador de información</h5>
+        <div class="component-section">
+            <custom-table
+                height="480px"
+                width="1000px"
+                cols='[
+                    "SKU",
+                    "Nombre",
+                    "Precio"
+                ]'
+                data='[
+                    [
+                        "1123", "Galletas Oreo", "$1.000"
+                    ],
+                    [
+                        "3213", "Cheezles", "$2.300"
+                    ],
+                    [
+                        "8734", "Cheetos", "$2.000"
+                    ],
+                    [
+                        "5423", "Doritos", "$1.800"
+                    ],
+                    [
+                        "7345", "Cerveza", "$4.300"
+                    ],
+                    [
+                        "3246", "Vino", "$5.300"
+                    ],
+                    [
+                        "6542", "Sprite", "$1.300"
+                    ],
+                    [
+                        "1432", "Fanta", "$1.200"
+                    ],
+                    [
+                        "5123", "7up", "$1.200"
+                    ],
+                    [
+                        "7432", "Kem Piña", "$1.200"
+                    ],
+                    [
+                        "2362", "Coca Cola", "$1.300"
+                    ]
+                ]'
+            ></custom-table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <custom-table
+                height="440px"
+                cols='[
+                    "Nombre",
+                    "Apellido",
+                    "Edad",
+                    "Cumpleaños"
+                ]'
+                data='[
+                    [
+                        "Elon", "Musk", "48", "28/06/1971"
+                    ],
+                    [
+                        "Brad", "Pitt", "56", "18/12/1963"
+                    ],
+                    [
+                        "Nicolas", "Cage", "56", "07/01/1964"
+                    ]
+                ]'
+                menu="true"
+            ></custom-table>
+        </div>
+
         <hr class="rounded" color="white">
 
         <h5>Componente 4</h5>
-        <div class="component-section"></div>
-
-        <hr class="rounded" color="white">
-
-        <h5>Componente 5</h5>
         <div class="component-section"></div>
 	</div>
 `;
