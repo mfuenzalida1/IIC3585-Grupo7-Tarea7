@@ -13,9 +13,5 @@
         "webpack": "^4.32.2",
         "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.11.0"
-    },
-    "dependencies": {
-        "@vaadin/vaadin-grid": "^5.6.6",
-        "@vaadin/vaadin-text-field": "^2.6.1"
     }
 }

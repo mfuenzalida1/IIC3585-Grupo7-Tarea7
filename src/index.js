@@ -30,7 +30,9 @@ template.innerHTML = `
         }
 
         .component-section {
-            margin: 50px 0 100px 0;
+            align: center;
+            text-align: center;
+            margin: 50px auto 100px auto;
         }
 
     </style>
@@ -152,7 +154,6 @@ template.innerHTML = `
             <br>
             <br>
             <custom-table
-                height="440px"
                 cols='[
                     "Nombre",
                     "Apellido",
