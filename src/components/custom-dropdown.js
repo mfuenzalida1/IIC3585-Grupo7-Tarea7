@@ -72,7 +72,12 @@ template.innerHTML = `
 
     <div class="dropdown">
         <span class="label">Label</span>
-        <custom-button as-atom></custom-button>
+        <custom-button
+            color="#363636"
+            bgcolor="white"
+            label="Boton"
+            as-atom
+        ></custom-button>
         <div class="dropdown-list-container">
             <ul class="dropdown-list"></ul>
         </div>
@@ -157,7 +162,7 @@ class CustomDropdown extends HTMLElement {
                 $option.classList.add('selected');
             }
             $option.addEventListener('click', () => {
-                // Selecciona la key y se renderea de nuevo (se actualiza)
+                // Selecciona la key y se actualiza
                 this.option = key;
                 this.toggleOpen();
                 this.dispatchEvent(

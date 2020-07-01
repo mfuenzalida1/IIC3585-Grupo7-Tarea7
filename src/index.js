@@ -41,7 +41,7 @@ template.innerHTML = `
         <h1>Reusable Web Components</h1>
 
         <hr class="rounded" color="white">
-        <h5>Selector</h5>
+        <h5>Dropdown</h5>
         <div class="component-section">
             <custom-dropdown
                 label="Seleccionar ingredientes"
@@ -77,7 +77,7 @@ template.innerHTML = `
         </div>
         <hr class="rounded" color="white">
 
-        <h5>E-commerce Card</h5>
+        <h5>Tarjeta E-commerce</h5>
         <div class="component-section">
             <custom-product-card
                 pname="Xaomi Mi 9"
@@ -176,9 +176,6 @@ template.innerHTML = `
         </div>
 
         <hr class="rounded" color="white">
-
-        <h5>Componente 4</h5>
-        <div class="component-section"></div>
 	</div>
 `;
 
@@ -189,17 +186,11 @@ class App extends HTMLElement {
         this._shadowRoot = this.attachShadow({ mode: 'open' });
         this._shadowRoot.appendChild(template.content.cloneNode(true));
 
-        /*
-        this.$input = this._shadowRoot.querySelector('input');
-        this.$input.addEventListener('input', this._handleChange.bind(this));
-        */
-
         this.$customDropdown = this._shadowRoot.querySelector('custom-dropdown');
 
         this.$customDropdown.addEventListener(
-            // Captura el onChange desde un componente hijo de custom-dropdown
-            'onChange', value => {
-                console.log(value);
+            'onChange', data => {
+                console.log(data);
             }
         );
     }

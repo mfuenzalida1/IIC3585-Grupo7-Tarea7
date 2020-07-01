@@ -13,8 +13,8 @@ template.innerHTML = `
         .box {
             display: inline-table;
             position: relative;
-            padding: auto;
-            margin: auto 30px;
+            padding-bottom: 16px;
+            margin: 0px 30px 10px 30px;
             font-size: 16px;
             font-weight: bold;
             width: 400px;
@@ -127,6 +127,8 @@ class CustomTable extends HTMLElement {
             const br = document.createElement('br');
             addButtonNode.setAttribute('label', 'Agregar');
             addButtonNode.setAttribute('id', 'add-button');
+            addButtonNode.setAttribute('bgcolor', '#90b84d');
+            addButtonNode.setAttribute('color', 'white');
             removeButtonNode.setAttribute('label', 'Eliminar');
             removeButtonNode.setAttribute('id', 'add-button');
             removeButtonNode.setAttribute('bgcolor', '#ff5e45');
